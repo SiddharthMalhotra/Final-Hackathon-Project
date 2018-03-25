@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row" style="width:1000px; margin:0 auto;text-align: right;padding: 50px 50px 20px 90px">
+    <form class="col s10 card-panel hoverable" style="padding: 30px" action="/registerfarmer" method="post">
+      <div class="row">
+        <h4 align="center"> Create a New Farmer Profile </h4>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtUsername" name="txtUsername" type="text" class="validate">
+            <label for="txtUsername">Username</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtPassword" name="txtPassword" type="password" class="validate">
+            <label for="txtPassword">Password</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtName" name="txtName" type="text" class="validate">
+            <label for="txtName">Name</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtAge" name="txtAge" type="text" class="validate">
+            <label for="txtAge">Age</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtDOB" name="txtDOB" type="text" class="validate">
+            <label for="txtDOB">D.O.B</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtLocation" name="txtLocation" type="text" class="validate">
+            <label for="txtLocation">Location</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtyield1" name="txtyield1" type="text" class="validate">
+            <label for="txtyield1">Yield 1</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtyield2" name="txtyield2" type="text" class="validate">
+            <label for="txtyield2">Yield 2</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtyield3" name="txtyield3" type="text" class="validate">
+            <label for="txtyield3">Yield 3</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtcollat" name="txtcollat" type="text" class="validate">
+            <label for="txtcollat">Collateral</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtcollamt" name="txtcollamt" type="text" class="validate">
+            <label for="txtcollamt">Collateral Value</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtamt" name="txtamt" type="text" class="validate">
+            <label for="txtamt">Loan Amount</label>
+          </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Register
+    <i class="material-icons right">send</i>
+  </button>
+    </form> 
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="row">
+        <div class="alert alert-info" role="alert">{{ message }}</div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  </div>
+</div>
+{% endblock %}

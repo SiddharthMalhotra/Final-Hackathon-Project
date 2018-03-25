@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+	<h5 align="center">Investor's Information</h5>
+
+    <br>
+    <br>
+    
+
+<table class="striped" style="width:600px" align="center">
+
+<tr>
+<th>Farmer</th>
+<th>Investor</th>
+<th>Loan Amount</th>
+<th>Time Period</th>
+<th>Interest Rate</th>
+
+</tr>
+
+{% for key in result %}
+   <tr>
+        <th> {{ key['f_id']}} </th>
+        <th> {{ key['i_id']}} </th>
+        <th> {{ key['amt']}} </th>
+        <th> {{ key['timep']}} </th>
+        <th> {{ key['roi']}} </th>      
+   </tr>
+{% endfor %}
+
+</table>
+
+
+</body>
+</html>
+{% endblock %}

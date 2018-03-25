@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Investors', 'Money Invested/Donated'],
+          ['SankarS',     7],
+          ['PrashantP',      5],
+          ['SiddharthM',  7],
+          ['Remaining',     4]
+          
+        ]);
+
+        var options = {
+          title: 'Farmer portfolio',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    </center>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <center>
+        <h4>Invest/Donate</h4>
+      </center>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <form action="/fulfiladream?farmer_id={{result}}" method="post">
+        <div class="form-group">
+          <label for="txtAmount">Amount</label>
+          <input type="Number" class="form-control" id="txtAmount" name="txtAmount"/>
+        </div>
+        <button type="submit" class="btn btn-primary" name="invest">Invest</button>
+        <button type="submit" class="btn btn-primary" name="donate" style="float: right;">Donate</button>
+      </form>
+    </div>
+  </div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="row">
+        <div class="alert alert-info" role="alert">{{ message }}</div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+{% endblock %}
+</body>
+</html>

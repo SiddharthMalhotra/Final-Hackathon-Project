@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <meta name = "viewport" content = "width = device-width, initial-scale = 1">  
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">    
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+      <style>
+      .containerbg{
+      background-image: url("http://www.thedialogue.co/wp-content/uploads/2017/05/agri-india-2.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 0px;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
+  </head>
+  <body>
+    <nav>
+    <div class="nav-wrapper #616161 grey darken-2">
+      <a href="#" class="brand-logo" style="padding-left: 20px">DREAMS</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/login">Login</a></li>
+        <li><a href="/registerfarmer">I am a Farmer</a></li>
+        <li><a href="/registerinvestor">I am an Investor</a></li>
+      </ul> 
+    </div>
+  </nav>
+    {% block content %}{% endblock %}
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="containerbg">
+<div class="row" style="width:1000px; margin:0 auto;text-align:right;padding-top: 150px; padding-left: 600px">
+    <form class="col s12 card-panel hoverable" style="padding: 30px" action="/login" method="post">
+      <div class="row">
+        <h4 align="center"> Login </h4>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtUsername" name="txtUsername" type="text" class="validate">
+            <label for="txtUsername">Username</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline">
+            <input id="txtPassword" name="txtPassword" type="password" class="validate">
+            <label for="txtPassword">Password</label>
+          </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Login
+    <i class="material-icons right">send</i>
+  </button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-info" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  </div>
+  {% endblock %}

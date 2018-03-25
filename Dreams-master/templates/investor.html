@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+	<h5 align="center">Farmers Information</h5>
+
+    <br>
+    <br>
+    
+
+<table class="striped" style="width:600px" align="center">
+
+<tr>
+<th>Name</th>
+<th>Credit Score</th>
+<th>Interest Rate</th>
+<th>Yield1</th>
+<th>Yield2</th>
+<th>Yield3</th>
+<th>Collateral</th>
+<th>Collateral Amount</th>
+<th>Loan Amount Required</th>
+
+</tr>
+
+{% for key in result %}
+   <tr>
+        <th><a href = "/fulfiladream?farmer_id={{key['_id']}}"> {{ key['name']}} </a></th>
+        <th> {{ key['cred_cs']}} </th>
+        <th> {{ key['roi']}} </th>
+        <th> {{ key['yield1']}} </th>
+        <th> {{ key['yield2']}} </th>
+        <th> {{ key['yield3']}} </th>
+        <th> {{ key['collateral']}} </th>
+        <th> {{ key['collateamt']}} </th>
+        <th> {{ key['loanamount']}} </th>
+
+        
+   </tr>
+{% endfor %}
+
+</table>
+
+
+</body>
+</html>
+{% endblock %}
